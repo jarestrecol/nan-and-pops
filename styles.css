@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ===========================
-       ANIMACIONES
+ANIMACIONES
 ==============================*/
 @keyframes float {
     0%, 100% { transform: translateY(0) rotate(0.5deg); }
@@ -77,6 +77,21 @@ h1, h2, h3, h4, h5 {
 .delay-4 { animation-delay: 1.2s; }
 
 /* Elementos animados por scroll */
+
+@media (prefers-reduced-motion: reduce) {
+    .section-title,
+    .flavor-card,
+    .reason-card,
+    .testimonial-card,
+    .story-text,
+    .story-image,
+    .gallery-item,
+    .location-card {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
 .section-title,
 .flavor-card,
 .reason-card,
@@ -85,11 +100,11 @@ h1, h2, h3, h4, h5 {
 .story-image,
 .gallery-item,
 .location-card {
-    opacity: 0;
-    transform: translateY(30px);
-    visibility: hidden;
-    transition: opacity var(--transition-base), transform var(--transition-base);
-    will-change: opacity, transform; /* ⚡ Mejora rendimiento */
+        opacity: 0;
+        transform: translateY(30px);
+        visibility: hidden;
+        transition: opacity var(--transition-base), transform var(--transition-base);
+        /* will-change eliminado para evitar uso excesivo de memoria */
 }
 
 .visible {
