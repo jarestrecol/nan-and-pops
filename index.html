@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Nan & Pops Ice Cream</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Floating elements -->
+    <div class="floating floating-1"></div>
+    <div class="floating floating-2"></div>
+    <div class="floating floating-3"></div>
+    <div class="floating floating-4"></div>
+    <div class="floating floating-5"></div>
+    <div class="floating floating-6"></div>
+    <div class="floating floating-7"></div>
+    <div class="floating floating-8"></div>
+    <div class="floating floating-9"></div>
+    <div class="floating floating-10"></div>
+
+<header id="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="#home" class="logo">
+        <div class="logo-icon">
+          <img src="img/logo.jpg" alt="Nan & Pop’s Ice Cream Logo">
+        </div>
+      </a>
+
+      <!-- Menú de escritorio -->
+      <nav id="main-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#flavors">Products</a></li>
+          <li><a href="#gallery">Flavours</a></li>
+          <li><a href="#story">Meet Us</a></li>
+          <li><a href="#visit">Visit Us</a></li>
+        </ul>
+      </nav>
+
+      <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ"
+         class="btn btn-primary btn-doordash" target="_blank" rel="noopener noreferrer">
+        Order DoorDash
+      </a>
+
+      <!-- Botón hamburguesa -->
+      <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- Overlay independiente -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- HERO -->
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content animate-fade-up">
+
+                <h1>
+                    Premium Ice Cream<br>
+                </h1>
+
+                <p>
+                    <strong>Where every scoop of ice cream becomes a shared memory, creating smiles that bring 
+                    families and friends together in one place.</strong>
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ"
+                       class="btn btn-primary"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Order Now
+                    </a>
+
+                    <a href="#flavors" class="btn btn-outline">View Products</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+<!-- Section Video -->
+
+<section class="video-gallery">
+    <div class="video-item">
+        <video 
+            muted 
+            autoplay 
+            loop 
+            playsinline 
+            preload="metadata" 
+            loading="lazy"
+            aria-label="Video de presentación 1"
+        >
+            <source src="video/video1.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <div class="video-item">
+        <video 
+            muted 
+            autoplay 
+            loop 
+            playsinline 
+            preload="metadata" 
+            loading="lazy"
+            aria-label="Video de presentación 2"
+        >
+            <source src="video/video2.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <div class="video-item">
+        <video 
+            muted 
+            autoplay 
+            loop 
+            playsinline 
+            preload="metadata" 
+            loading="lazy"
+            aria-label="Video de presentación 3"
+        >
+            <source src="video/video3.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <div class="video-item">
+        <video 
+            muted 
+            autoplay 
+            loop 
+            playsinline 
+            preload="metadata" 
+            loading="lazy"
+            aria-label="Video de presentación 4"
+        >
+            <source src="video/video4.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+  </section>
+
+    <!-- ********** SECCIÓN 3: PRODUCTOS / CREACIONES (FLAVORS) ********** -->
+
+    <section id="flavors">
+        <div class="container">
+            <!-- Título de la sección de productos -->
+            <div class="section-title">
+                <h2>Classics</h2>
+                <p>
+                  <strong>The taste of happiness — Classic Ice Cream For Every Season..</strong>
+                </p>
+            </div>
+
+            <!-- Navegación por categorías (Tabs) -->
+
+            <div class="tabs">
+                <button class="tab-btn active" data-filter="all">Classics</button>
+                <button class="tab-btn" data-filter="scoop">Scoop Only</button>
+                <button class="tab-btn" data-filter="specialities">Specialties</button>
+                <button class="tab-btn" data-filter="waffle">Bubble Waffle</button>
+                <button class="tab-btn" data-filter="coffee">Coffee</button>
+            </div>
+
+            <!-- Contenedor de la cuadrícula de productos -->
+            <div class="flavors-grid" id="flavors-grid">
+
+                <!-- Tarjeta de Producto: Bubble Waffle -->
+                <div class="flavor-card" data-category="waffle">
+                    <div class="flavor-img">
+                        <img src="img/waffle 3.png" alt="Bubble Waffle">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Build Your Own</h3>
+                        <p>Pick one scoop and 3 toppings to create your dream bubble waffle.</p>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;"> $9.75</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Bubble Waffle</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Banana Split -->
+                <div class="flavor-card" data-category="specialities">
+                    <div class="flavor-img">
+                        <img src="img/banana.png" alt="Banana Split">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Banana Split</h3>
+                        <p>Fresh banana, ice cream, whipped cream and cherries. A timeless classic that delights instantly.</p>
+                        <strong>3 scoops of your choice + 4 toppings</strong>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$9.75</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Specialties</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Classic Sundae -->
+                <div class="flavor-card" data-category="specialities">
+                    <div class="flavor-img">
+                        <img src="img/sundaes.png" alt="Classic Sundae">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Sundaes</h3>
+                        <p>Your choice of scoop(s) and any 2 toppings. Includes whipped cream and cherry.</p>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">Small (1 scoop) $6.50</span>
+                         <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">Large (2 scoops) $8.50</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Specialties</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Brownie Sundae -->
+                <div class="flavor-card" data-category="specialities">
+                    <div class="flavor-img">
+                        <img src="img/brownie.png" alt="Brownie Sundae">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Brownie Sundae</h3>
+                        <p>Build it your way: 2 Scoops, 1 sauce, and 1 topping, paired with warm brownie wedges.</p>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$9.50</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Specialties</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tarjeta de Producto: Milkshakes -->
+                <div class="flavor-card" data-category="specialities">
+                    <div class="flavor-img">
+                        <img src="img/milkch.png" alt="Milkshake">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Milkshakes</h3>
+                        <p>Creamy Milkshakes Made With any Flavor You Choose. Includes Whipped Cream And Cherry.</p>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$7.99</span>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">Add malt +0.50</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Specialties</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Cones -->
+                <div class="flavor-card" data-category="scoop">
+                    <div class="flavor-img">
+                        <img src="img/cone.jpg" alt="Cone">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Cones</h3>
+                        <p>A crunchy cone that adds a special touch to your favorite ice cream. Pick the flavor and scoops you prefer.</p>
+                        <strong>Junior $3.75 | Small 5.25 | Double $7.25 </strong>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;"> Waffle Cone $1.00 | Dipped Cone $1.70 | Bubble waffle $2.50 </span>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;"> Kids Dipped Cone + $0.75 </span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Scoop Only</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Cup -->
+                <div class="flavor-card" data-category="scoop">
+                    <div class="flavor-img">
+                        <img src="img/cup.png" alt="Cup">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Cup</h3>
+                        <p>Select Your Size And Flavors.</p>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;"> Junior $3.75 | Small $5.25 | Double $7.25</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Scoop Only</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Floats -->
+                <div class="flavor-card" data-category="specialities">
+                    <div class="flavor-img">
+                        <img src="img/float.jpg" alt="Floats">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Floats</h3>
+                        <p>Your choice of soda and ice cream.</p>
+                        <strong>Orange | Coke Zero | Coca-Cola | Root Beer</strong><br>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$6.99</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Specialties</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Affogato -->
+                <div class="flavor-card" data-category="coffee">
+                    <div class="flavor-img">
+                        <img src="img/afo.jpg" alt="Affogato">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Affogato</h3>
+                        <p>A shot of hot espresso over creamy ice cream—intensity, sweetness, and pure pleasure in every sip.</p>
+                        <strong>8 oz + Vanilla ice cream</strong><br>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$5.99</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Coffee</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de Producto: Latte -->
+                <div class="flavor-card" data-category="coffee">
+                    <div class="flavor-img">
+                        <img src="img/late.jpg" alt="Latte">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Latte</h3>
+                        <p>Smooth and balanced: bold espresso blended with creamy steamed milk. A classic made to linger.</p>
+                        <strong>8 oz</strong><br>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$3.25</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Coffee</span>
+                        </div>
+                      </div>
+                    </div>
+
+                <!-- Tarjeta de Producto: Capuchino -->
+                <div class="flavor-card" data-category="coffee">
+                    <div class="flavor-img">
+                        <img src="img/chino.jpg" alt="Capuchino">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Cappuccino</h3>
+                        <p>Bold espresso topped with silky steamed milk foam. A timeless comfort in every sip.</p>
+                        <strong>8 oz</strong><br>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$3.00</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Coffee</span>
+                        </div>
+                    </div>
+                  </div>
+                
+                <!-- Tarjeta de Producto: Americano -->
+                <div class="flavor-card" data-category="coffee">
+                    <div class="flavor-img">
+                        <img src="img/american.jpg" alt="Americano">
+                    </div>
+                    <div class="flavor-content">
+                        <h3>Americano</h3>
+                        <p>High-character espresso, diluted to perfection. Intense and pure flavor.</p>
+                        <strong>8 oz</strong><br>
+                        <span class="flavor-tag" style="background: var(--pastel-blue); color: #000;">$3.00</span>
+                        <div class="flavor-meta">
+                            <span class="flavor-tag">Coffee</span>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div> <!-- End flavors-grid -->
+            </div> <!-- End container -->
+          </section>
+
+<!-- ********** SECCIÓN 4: GALERÍA / LISTA COMPLETA DE SABORES ********** -->
+
+<section id="gallery">
+
+  <div class="container">
+
+    <!-- ===== TÍTULO PRINCIPAL ===== -->
+     
+    <div class="section-title">
+      <h2>Constant Flavor Rotation</h2>
+      <h2><strong>We Rotate Our Menu Constantly!</strong></h2>
+      <h1>Explore Some Of Our Collection and Contact us For Today’s Line Up.</h1>
+    </div>
+
+    <!-- ===== SABORES REGULARES ===== -->
+
+    <div class="menu-section">
+      <div class="gallery-grid">
+
+        <div class="gallery-item">
+          <img src="img/German Chocolate.png" alt="German Chocolate">
+          <p>German Chocolate</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/The Salty Turtle.png" alt="The Salty Turtle">
+          <p>The Salty Turtle</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Insta Graham.png" alt="Insta Graham">
+          <p>Insta Graham</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Apple strudel.jpg" alt="Apple Strudel">
+          <p>Apple Strudel</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Birthday Cake.jpg" alt="Birthday Cake">
+          <p>Birthday Cake</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Butter Pecan.jpg" alt="Butter Pecan">
+          <p>Butter Pecan</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Butterscotch bom.jpg" alt="Butterscotch Bomb">
+          <p>Butterscotch Bomb</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/C is for cookie.jpg" alt="C is for Cookie">
+          <p>C is for Cookie</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Captains chocolate.jpg" alt="Captain's Chocolate">
+          <p>Captain's Chocolate</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Cookies n cream.jpg" alt="Cookies n Cream">
+          <p>Cookies n Cream</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Chocolate peanut butter.jpg" alt="Chocolate Peanut Butter">
+          <p>Chocolate Peanut Butter</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Key lime pie.jpg" alt="Key Lime Pie">
+          <p>Key Lime Pie</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Gold mine.jpg" alt="Gold Mine">
+          <p>Gold Mine</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Mint chip special.jpg" alt="Mint Chip Special">
+          <p>Mint Chip Special</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Strawberry.jpg" alt="Strawberry">
+          <p>Strawberry</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Mexican hot chocolate.jpg" alt="Mexican Hot Chocolate">
+          <p>Mexican Hot Chocolate</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Pumpkin.jpg" alt="Pumpkin">
+          <p>Pumpkin</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Spumoni.jpg" alt="Spumoni">
+          <p>Spumoni</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Vanilla bean.jpg" alt="Vanilla Bean">
+          <p>Vanilla Bean</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Peppermint flash.JPG" alt="Peppermint Flash">
+          <p>Peppermint Flash</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Cherry oblivion.jpg" alt="Cherry Oblivion">
+          <p>Cherry Oblivion</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Mango ice cream.jpg" alt="Mango Ice Cream">
+          <p>Mango Ice Cream</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/ChocolateRas.jpg" alt="Chocolate Raspberry Truffle">
+          <p>Chocolate Raspberry Truffle</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Cotton.jpg" alt="Cotton Candy">
+          <p>Cotton Candy</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Stellar coffee.jpg" alt="Stellar Coffee">
+          <p>Stellar Coffee</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Dulce de Leche.jpg" alt="Dulce de Leche">
+          <p>Dulce de Leche</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Elephant ears.jpg" alt="Elephant Ears">
+          <p>Elephant Ears</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/toasted Coconut.jpg" alt="Toasted Coconut">
+          <p>Toasted Coconut</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/dreamsicle.jpg" alt="Dreamsicle">
+          <p>Dreamsicle</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/garbage can.jpg" alt="Garbage Can">
+          <p>Garbage Can</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/bananaice.jpg" alt="Banana Cream Pie">
+          <p>Banana Cream Pie</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Road Trip.png" alt="Roat Trip">
+          <p>Road Trip</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/CookieD.jpg" alt="Cookie Dough">
+          <p>Cookie Dough</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/red.jpg" alt="Red Velvet Cake">
+          <p>Red Velvet Cake</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Rainbow.jpg" alt="Rainbow Sherbet">
+          <p>Rainbow Sherbet</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/super.jpg" alt="Superman">
+          <p>Superman</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/RUM.png" alt="Rum Raisin">
+          <p>Rum Raisin</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/strawberry cheesec.png" alt="Strawberry Cheesecake">
+          <p>Strawberry Cheesecake</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/Black Raspberry.png" alt="Black Raspberry">
+          <p>Black Raspberry</p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="img/salte.png" alt="Salted Caramel Brownie">
+          <p>Salted Caramel Brownie</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== NON DAIRY ICE CREAM AND NO SUGAR ADDED TITLE ===== -->
+
+    <div class="non-dairy-section">
+
+      <div class="section-title non-dairy-title">
+        <h2><strong>Non-Dairy And No Sugar Added Options Available!</strong></h2>
+      </div>
+  </div>
+
+</section>
+
+    <!-- ********** SECCIÓN 5: CALL TO ACTION (CTA) ********** -->
+
+<section class="cta-wrapper">
+    <div class="container">
+        <div class="cta-inner">
+            <h2>Ready for a Scoop of Happiness?</h2>
+            <p>
+              <strong>Get your favorite flavor delivered right to your door or visit us for a delightful experience.</strong>
+
+              </p>
+
+            <div class="cta-buttons">
+                <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ" 
+                   class="btn btn-primary btn-lg" 
+                   target="_blank" 
+                   rel="noopener noreferrer">
+                   Order Delivery Now 🛵
+                </a>
+
+                <a href="#visit" class="btn btn-outline btn-lg">
+                    View Hours & Location
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- ********** SECCIÓN 6: POR QUÉ ELEGIRNOS (WHY US) ********** -->
+
+<section id="why-us">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Why Choose Nan & Pops?</h2>
+      <p><strong>It is choosing quality, connection, and an environment designed to make everyone feel welcome.</strong></p>
+    </div>
+
+    <div class="carousel-container">
+
+      <!-- Wrapper necesario para JS -->
+      <div class="carousel-wrapper">
+        <!-- Track con clase para JS -->
+        <div class="carousel-track whyus-grid-scroller">
+
+          <div class="card-container">
+            <div class="reason-image"><img src="img/familia.jpg" alt="Family"></div>
+            <h3>A Place to Share Together</h3>
+            <p>We’ve created a warm and welcoming space where families can enjoy time together, laugh, talk, and make lasting memories. Every visit becomes a special moment for both kids and adults.</p>
+          </div>
+
+          <div class="card-container">
+            <div class="reason-image"><img src="img/Pet.jpg" alt="Pet Friendly"></div>
+            <h3>Pet Friendly</h3>
+            <p>We welcome your furry friend with open arms, offering cozy spaces, pup cups and fresh water bowls so everyone feels at home.</p>
+          </div>
+
+          <div class="card-container">
+            <div class="reason-image"><img src="img/Pay.jpg" alt="Payments"></div>
+            <h3>Pay Your Way</h3>
+            <p>Cash, card, or contactless—we’ve got you covered.</p>
+          </div>
+
+          <div class="card-container">
+            <div class="reason-image"><img src="img/ni;os.jpg" alt="Kids Activities"></div>
+            <h3>Fun for Little Artists</h3>
+            <p>We offer creative activities for kids, including coloring pages and crayons. A cheerful space where they can play, draw, and enjoy their visit while you relax.</p>
+          </div>
+
+          <div class="card-container">
+            <div class="reason-image"><img src="img/discapacidad.jpg" alt="Accessibility"></div>
+            <h3>Barrier-Free Access</h3>
+            <p>Our shop offers safe and comfortable access for individuals with reduced mobility. Everyone is welcome to enjoy their visit without obstacles.</p>
+          </div>
+
+          <div class="card-container">
+            <div class="reason-image"><img src="img/parking.jpg" alt="Parking"></div>
+            <h3>Park with Ease</h3>
+            <p>We offer convenient parking spaces right in front of our shop so your visit is stress-free. Just pull up and enjoy—your spot is waiting!</p>
+          </div>
+
+        </div> <!-- End carousel-track -->
+      </div> <!-- End carousel-wrapper -->
+
+    </div> <!-- End carousel-container -->
+
+  </div>
+</section>
+
+    <!-- ********** SECCIÓN 7: NUESTRA HISTORIA / SOBRE NOSOTROS (STORY) ********** -->
+    
+<section id="story" class="story">
+    <div class="story-content">
+
+        <div class="section-title">
+            <h2>Nan & Pop's is Entering a New Chapter</h2>
+        </div>
+
+        <div class="story-text">
+            <p>
+                <strong>We are excited to introduce ourselves as the new owners of Nan & Pop’s. 
+                We are dedicated to preserving the quality you know while bringing our own energy to the shop.
+                We believe in keeping things simple and delicious. Whether you’re stopping by for a quick treat or 
+                catching up with friends, we are here to ensure every visit is a good one. Come by and say hello.</strong>
+            </p>
+        </div>
+
+        <div class="story-button-wrapper">
+            <a href="#visit" class="btn btn-outline">Send us a Message</a>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ********** SECCIÓN 7: TESTIMONIOS (TESTIMONIALS) ********** -->
+
+<section id="testimonials">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our Customers Love Us</h2>
+      <p>
+        <strong>Rated 5 stars across Google and Yelp for quality and customer service.</strong>
+      </p>
+    </div>
+
+    <div class="testimonials-carousel-container">
+      <div class="testimonials-wrapper">
+        <div class="testimonials-grid-scroller">
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>Delicious ice cream and amazing service. Everything is fresh, handcrafted, and made with great care. The atmosphere is cozy and perfect for enjoying with family. Definitely a place you must visit! 🍨✨</p>
+            <cite>— Julian R.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>Cute, cozy place with friendly employees. It was our first time here, will not be our last, ice cream was pretty good. They have unique names for icecream flavors, makes you feel like a kid again.</p>
+            <cite>— Karen R.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>What a spectacular experience! I was very much looking forward to visiting the ice cream parlor after its inauguration, and it exceeded my expectations. The place is very clean, cozy, and beautifully decorated, with the great touch of offering drawing activities for children. I must highlight the incredible kindness of the owners and, of course, the quality of the ice cream, which is simply spectacular.</p>
+            <cite>— J.M</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>Super recommended!!! Very nice ice cream shop, super friendly staff. I went there with some friends and we were delighted with the experience. The ice cream was delicious. We’re definitely coming back.</p>
+            <cite>— Elvia Ursache.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>The presentation of the cones is impeccable! I tried the Butter Pecan, served to perfection, and its flavor is pure, intense, and of the highest quality. The premises are immaculate, and the staff is very careful when serving.</p>
+            <cite>— Liam P.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>I'm a very observant person and immediately noticed the excellent cleanliness of the premises, which is vital to me. Furthermore, the quality of their non-dairy options (Vanilla and Chocolate) is surprising: super creamy and well-presented.</p>
+            <cite>— Chloe M.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>The variety of flavors is fantastic. The Chocolate Raspberry Truffle has a perfect balance; the quality of the ingredients they offer is noticeable. Every scoop is well-served and beautifully presented.</p>
+            <cite>— Noah and Lisa J.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>I bought a sundae and the presentation was beautiful, paying attention to every detail. The flavor of the Birthday Cake was authentic and delicious. The team works with great hygiene, and the service is very fast and friendly.</p>
+            <cite>— Grace A.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>This was our first time going to Nan & Pop’s. Another couple and my wife and I, were greeted right away and was able to place our order within minutes. Each couple had the Joey’s Cookie Monster Crunch which is definitely worth its hype. Will be back in the future.</p>
+            <cite>— Jamiell Jack.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>What a great little ice cream place. Staffers friendly, place was clean although a little pricey. Very delicious.</p>
+            <cite>— D H “Alex”.</cite>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+            <p>My wife and I frequent Nan & Pop’s. The staff is very friendly and the ice cream is great. They rotate flavors so there’s always something new to try! Highly recommend.</p>
+            <cite>— Austin Howard.</cite>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- ********** SECCIÓN 9: UBICACIÓN Y HORARIO (VISIT / LOCATION) ********** -->
+
+<section id="visit" class="location">
+  <div class="container">
+    <div class="location-card">
+      <div class="location-content">
+
+        <!-- Bloque de Mapa y Direcciones -->
+        <div class="location-map">
+          <!-- Icono SVG de ubicación -->
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+          </svg>
+
+          <h3>Find Us</h3>
+          <p>Click below to get directions via Google Maps.</p>
+          <a href="https://maps.app.goo.gl/SJ8cEFnAh8yi7NWU7" class="btn btn-primary" target="_blank">
+            Get Directions
+          </a>
+        </div>
+
+        <!-- Bloque de Información de Contacto y Horarios -->
+        <div class="location-info">
+          <h2>Visit Our Shop</h2>
+
+          <!-- Dirección -->
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              <h3>Address</h3>
+              <p>351 N Ronald Reagan Blvd STE 1005, Longwood, FL 32750.</p>
+            </div>
+          </div>
+
+          <!-- Horario -->
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <div class="contact-text">
+              <h3>Store Hours</h3>
+              <p>
+                Mon: Closed<br>
+                Tue - Thu: 2 PM - 9 PM <br>
+                Fri: 2 PM - 10 PM <br>
+                Sat: 12 PM - 10 PM <br>
+                Sun: 12 PM - 8 PM</p>
+            </div>
+          </div>
+
+          <!-- Contacto -->
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              <h3>Contact</h3>
+              <p>
+                Text +1 (407) 748 - 9115
+              </p>
+                <p>
+                  Calls +1 (321) 203 4006 
+                </p>
+                <br>
+                Nanpopsicecreamshopllc@gmail.com
+              </p>
+            </div>
+          </div>
+
+          <!-- Google Reviews -->
+          <div class="contact-item">
+            <div class="contact-icon">⭐</div>
+            <div class="contact-text">
+              <h3>Google Reviews</h3>
+              <a
+                href="https://www.google.com/search?kgmid=/g/11jv4j1s4v&hl=es-419&q=Nan+%26+Pop%27s+Ice+Cream+Shop&shndl=30&shem=damc,lcuae,shrtsdl&source=sh/x/loc/osrp/m5/1&kgs=867f91e8eb4900b4#lrd=0x88e773759711da09:0xa14d1fa7ab52afbb,1"
+                target="_blank"
+                class="google-btn"
+              >
+                View Ratings on Google
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ********** PIE DE PÁGINA (FOOTER) ********** -->
+ 
+<footer>
+  <div class="container">
+    
+    <div class="footer-grid">
+
+      <!-- About -->
+      <div class="footer-col footer-about">
+        <h4>Nan & Pops</h4>
+        <p>Ice cream shop with the most select flavors, inspired by family tradition and the sweetest memories.</p>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/nanandpopsicecream/" class="social-link" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/share/1FfjQ6ookU/" class="social-link" target="_blank" aria-label="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://wa.me/14077489115" class="social-link" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-col footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#gallery">Our Flavors</a></li>
+          <li><a href="#story">Meet Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li>
+            <a 
+              href="https://www.doordash.com/store/nan-&-pops-ice-cream-shop-(n-ronald-reagan-blvd)-longwood-25044905/23191565/?aw=ljco-PoPfiklUwhZ&utm_source=mx_share" 
+              target="_blank"
+            >
+              Order Delivery
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col footer-contact">
+        <h4>Contact Us</h4>
+        <address>
+          <p><span class="ci">📍</span>351 N Ronald Reagan Blvd, Suite 1005, Longwood, FL 32750, United States.</p>
+          <p><span class="ci">📲</span>Text +1 (407) 748 - 9115</p>
+          <p><span class="ci">📞</span> Calls +1 321 203 4006</p>
+          <p><span class="ci">📧</span>Nanpopsicecreamshopllc@gmail.com</p>
+        </address>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="footer-col footer-news">
+        <h4>Sweet News</h4>
+        <p>Send us an email to learn about our seasonal flavors and special offers!</p>
+
+        <form 
+          class="newsletter-form" 
+          action="mailto:Nanpopsicecreamshopllc@gmail.com" 
+          method="post" 
+          enctype="text/plain"
+        >
+          <input type="email" name="email" placeholder="Your Email Address" required>
+          <button type="submit">Send Email</button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      &copy; 2025 Nan & Pops Ice Cream Shop. All rights reserved. | Crafted with love. |
+    </div>
+
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>
