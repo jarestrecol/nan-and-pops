@@ -94,22 +94,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ========== CARRUSEL NATURAL MOBILE & DESKTOP ========== */
-    function createUltraNaturalCarousel(trackSelector) {
+
+    function createAutoCarousel(trackSelector, interval = 3500, pauseOnHover = true) {
         const track = document.querySelector(trackSelector);
         if (!track) return;
 
-        // estilos nativos para mobile
+        // Native scroll for mobile
         track.style.overflowX = 'auto';
         track.style.scrollBehavior = 'smooth';
         track.style.webkitOverflowScrolling = 'touch';
 
-        // arrastre con mouse en desktop
+        // Mouse drag for desktop
         if (!isMobile) {
             let isDown = false;
             let startX, scrollLeft;
-
             track.style.cursor = 'grab';
-
             track.addEventListener('mousedown', (e) => {
                 isDown = true;
                 track.style.cursor = 'grabbing';
@@ -117,19 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollLeft = track.scrollLeft;
                 document.body.style.userSelect = 'none';
             });
-
             track.addEventListener('mouseleave', () => {
                 isDown = false;
                 track.style.cursor = 'grab';
                 document.body.style.userSelect = '';
             });
-
             track.addEventListener('mouseup', () => {
                 isDown = false;
                 track.style.cursor = 'grab';
                 document.body.style.userSelect = '';
             });
-
             track.addEventListener('mousemove', (e) => {
                 if (!isDown) return;
                 e.preventDefault();
@@ -138,10 +134,38 @@ document.addEventListener('DOMContentLoaded', () => {
                 track.scrollLeft = scrollLeft - walk;
             });
         }
+
+        // Auto scroll
+        let autoScroll;
+        let paused = false;
+        const scrollStep = () => {
+            if (paused) return;
+            const card = track.children[0];
+            if (!card) return;
+            const cardWidth = card.offsetWidth + 32; // 32px gap
+            // Si está al final, vuelve al inicio
+            if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 2) {
+                track.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            }
+        };
+        autoScroll = setInterval(scrollStep, interval);
+
+        // Pausa al interactuar
+        if (pauseOnHover) {
+            track.addEventListener('mouseenter', () => { paused = true; });
+            track.addEventListener('mouseleave', () => { paused = false; });
+        }
+        // Pausa al hacer scroll manual
+        track.addEventListener('touchstart', () => { paused = true; });
+        track.addEventListener('touchend', () => { paused = false; });
+        track.addEventListener('mousedown', () => { paused = true; });
+        track.addEventListener('mouseup', () => { paused = false; });
     }
 
-    /* ========== INICIALIZACIÓN DE CARRUSELES ========== */
-    createUltraNaturalCarousel(".whyus-grid-scroller");
-    createUltraNaturalCarousel(".testimonials-grid-scroller");
+    // Inicializar carruseles automáticos
+    createAutoCarousel('.whyus-grid-scroller', 3500, true);
+    createAutoCarousel('.testimonials-grid-scroller', 4200, true);
 
 });
