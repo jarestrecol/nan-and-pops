@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const MOBILE_BREAKPOINT = 1023;
-    const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
 
     /* ========== HEADER FIJO ========== */
     const header = document.getElementById('header');
@@ -93,79 +92,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ========== CARRUSEL NATURAL MOBILE & DESKTOP ========== */
+    /* ========== BOTONES FLOTANTES DE PEDIDO ========== */
+    const orderFab = document.querySelector('.order-fab');
+    const flavorTabs = document.querySelector('#flavors .tabs');
+    const siteFooter = document.querySelector('footer');
+    if (orderFab && flavorTabs) {
+        const toggleOrderFab = () => {
+            const reachedTabs = flavorTabs.getBoundingClientRect().top < window.innerHeight;
+            // Ocultar los botones flotantes cuando el footer entra en pantalla
+            const inFooter = siteFooter && siteFooter.getBoundingClientRect().top < window.innerHeight;
+            orderFab.classList.toggle('order-fab--visible', reachedTabs && !inFooter);
+        };
+        window.addEventListener('scroll', toggleOrderFab, { passive: true });
+        window.addEventListener('resize', toggleOrderFab);
+        toggleOrderFab();
+    }
 
-    function createAutoCarousel(trackSelector, interval = 3500, pauseOnHover = true) {
+    /* ========== CARRUSEL CONTINUO ========== */
+    function createMarqueeCarousel(trackSelector, speed = 0.4) {
         const track = document.querySelector(trackSelector);
         if (!track) return;
 
-        // Native scroll for mobile
-        track.style.overflowX = 'auto';
-        track.style.scrollBehavior = 'smooth';
+        track.style.scrollBehavior = 'auto';
+        track.style.scrollSnapType = 'none';
         track.style.webkitOverflowScrolling = 'touch';
 
-        // Mouse drag for desktop
-        if (!isMobile) {
-            let isDown = false;
-            let startX, scrollLeft;
-            track.style.cursor = 'grab';
-            track.addEventListener('mousedown', (e) => {
-                isDown = true;
-                track.style.cursor = 'grabbing';
-                startX = e.pageX - track.offsetLeft;
-                scrollLeft = track.scrollLeft;
-                document.body.style.userSelect = 'none';
-            });
-            track.addEventListener('mouseleave', () => {
-                isDown = false;
-                track.style.cursor = 'grab';
-                document.body.style.userSelect = '';
-            });
-            track.addEventListener('mouseup', () => {
-                isDown = false;
-                track.style.cursor = 'grab';
-                document.body.style.userSelect = '';
-            });
-            track.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - track.offsetLeft;
-                const walk = (x - startX);
-                track.scrollLeft = scrollLeft - walk;
-            });
-        }
+        // La posición se acumula en una variable propia para que el avance
+        // fraccionario funcione aunque el navegador redondee scrollLeft.
+        let pos = 0;
 
-        // Auto scroll
-        let autoScroll;
-        let paused = false;
-        const scrollStep = () => {
-            if (paused) return;
-            const card = track.children[0];
-            if (!card) return;
-            const cardWidth = card.offsetWidth + 32; // 32px gap
-            // Si está al final, vuelve al inicio
-            if (track.scrollLeft + track.offsetWidth >= track.scrollWidth - 2) {
-                track.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        const step = () => {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (maxScroll > 0) {
+                pos += speed;
+                // Al llegar al final, vuelve de inmediato al inicio
+                if (pos >= maxScroll) pos = 0;
+                track.scrollLeft = pos;
             }
+            requestAnimationFrame(step);
         };
-        autoScroll = setInterval(scrollStep, interval);
-
-        // Pausa al interactuar
-        if (pauseOnHover) {
-            track.addEventListener('mouseenter', () => { paused = true; });
-            track.addEventListener('mouseleave', () => { paused = false; });
-        }
-        // Pausa al hacer scroll manual
-        track.addEventListener('touchstart', () => { paused = true; });
-        track.addEventListener('touchend', () => { paused = false; });
-        track.addEventListener('mousedown', () => { paused = true; });
-        track.addEventListener('mouseup', () => { paused = false; });
+        requestAnimationFrame(step);
     }
 
-    // Inicializar carruseles automáticos
-    createAutoCarousel('.whyus-grid-scroller', 3500, true);
-    createAutoCarousel('.testimonials-grid-scroller', 4200, true);
+    // Inicializar carruseles
+    createMarqueeCarousel('.whyus-grid-scroller', 0.4);
+    createMarqueeCarousel('.testimonials-grid-scroller', 0.4);
 
 });

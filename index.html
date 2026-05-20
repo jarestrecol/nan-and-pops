@@ -49,12 +49,51 @@
           <li><a href="#story">Meet Us</a></li>
           <li><a href="#visit">Visit Us</a></li>
         </ul>
-      </nav>
 
-      <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ"
-         class="btn btn-primary btn-doordash" target="_blank" rel="noopener noreferrer">
-        Order DoorDash
-      </a>
+        <!-- Botones de pedido (solo móvil) -->
+        <div class="nav-order">
+          <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ"
+             class="nav-order__item nav-order__item--doordash"
+             target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" fill-rule="evenodd" d="M2 3h9.5C17.9 3 22 7.1 22 12s-4.1 9-10.5 9H2V3zm4 4v10h5.5c3.6 0 6.5-2.5 6.5-5s-2.9-5-6.5-5H6z"/>
+            </svg>
+            <span class="nav-order__label">DoorDash</span>
+          </a>
+
+          <a href="https://nan-pops-ice-cream-shop-llc.square.site/?owg-fulfillment=pickup&fulfillment=PICKUP&location=11f135313c6815f28c903cecef6dbab4&location_id=LYZRK7PAME6SC&rwg_token=AFd1xnH_M3Gkw2WWq5c5WNFDYI9xzoJuhTVzgjR7vM0CeEDByo49UGEo6RFK0QTAkpSTBHNL5DIfB003nbqDBUKDNurzOYnVIhGyZu1iLL-DHAigAhcO_Hs%3D"
+             class="nav-order__item nav-order__item--order"
+             target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span class="nav-order__label">Order Ahead</span>
+          </a>
+
+          <a href="https://www.order.store/co/store/nan-%26-pops-ice-cream-shop/EaqRjp-5SSuxaymJscZgNQ"
+             class="nav-order__item nav-order__item--uber"
+             target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M4 4h4v10c0 2.2 1.8 4 4 4s4-1.8 4-4V4h4v10c0 4.4-3.6 8-8 8s-8-3.6-8-8V4z"/>
+            </svg>
+            <span class="nav-order__label">Uber Eats</span>
+          </a>
+
+          <a href="https://app.squareup.com/gift/MLR3HFWWF4F8K/order"
+             class="nav-order__item nav-order__item--gift"
+             target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12"/>
+              <rect x="2" y="7" width="20" height="5"/>
+              <line x1="12" y1="22" x2="12" y2="7"/>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+            </svg>
+            <span class="nav-order__label">Gift Cards</span>
+          </a>
+        </div>
+      </nav>
 
       <!-- Botón hamburguesa -->
       <button class="mobile-menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -64,6 +103,58 @@
 
 <!-- Overlay independiente -->
 <div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- Botones flotantes de pedido -->
+<nav class="order-fab" aria-label="Quick order links">
+  <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ"
+     class="order-fab__item order-fab__item--doordash"
+     target="_blank" rel="noopener noreferrer" aria-label="Order on DoorDash">
+    <span class="order-fab__label">DoorDash</span>
+    <span class="order-fab__circle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" fill-rule="evenodd" d="M2 3h9.5C17.9 3 22 7.1 22 12s-4.1 9-10.5 9H2V3zm4 4v10h5.5c3.6 0 6.5-2.5 6.5-5s-2.9-5-6.5-5H6z"/>
+      </svg>
+    </span>
+  </a>
+
+  <a href="https://nan-pops-ice-cream-shop-llc.square.site/?owg-fulfillment=pickup&fulfillment=PICKUP&location=11f135313c6815f28c903cecef6dbab4&location_id=LYZRK7PAME6SC&rwg_token=AFd1xnH_M3Gkw2WWq5c5WNFDYI9xzoJuhTVzgjR7vM0CeEDByo49UGEo6RFK0QTAkpSTBHNL5DIfB003nbqDBUKDNurzOYnVIhGyZu1iLL-DHAigAhcO_Hs%3D"
+     class="order-fab__item order-fab__item--order"
+     target="_blank" rel="noopener noreferrer" aria-label="Order Ahead">
+    <span class="order-fab__label">Order Ahead</span>
+    <span class="order-fab__circle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+    </span>
+  </a>
+
+  <a href="https://www.order.store/co/store/nan-%26-pops-ice-cream-shop/EaqRjp-5SSuxaymJscZgNQ"
+     class="order-fab__item order-fab__item--uber"
+     target="_blank" rel="noopener noreferrer" aria-label="Order on Uber Eats">
+    <span class="order-fab__label">Uber Eats</span>
+    <span class="order-fab__circle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M4 4h4v10c0 2.2 1.8 4 4 4s4-1.8 4-4V4h4v10c0 4.4-3.6 8-8 8s-8-3.6-8-8V4z"/>
+      </svg>
+    </span>
+  </a>
+
+  <a href="https://app.squareup.com/gift/MLR3HFWWF4F8K/order"
+     class="order-fab__item order-fab__item--gift"
+     target="_blank" rel="noopener noreferrer" aria-label="Buy Gift Cards">
+    <span class="order-fab__label">Gift Cards</span>
+    <span class="order-fab__circle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 12 20 22 4 22 4 12"/>
+        <rect x="2" y="7" width="20" height="5"/>
+        <line x1="12" y1="22" x2="12" y2="7"/>
+        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+      </svg>
+    </span>
+  </a>
+</nav>
 
     <!-- HERO -->
 
@@ -82,13 +173,49 @@
 
                 <div class="hero-buttons">
                     <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ"
-                       class="btn btn-primary"
+                       class="btn btn-order btn-order--doordash"
                        target="_blank"
                        rel="noopener noreferrer">
-                        Order Now
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                            <path fill="currentColor" fill-rule="evenodd" d="M2 3h9.5C17.9 3 22 7.1 22 12s-4.1 9-10.5 9H2V3zm4 4v10h5.5c3.6 0 6.5-2.5 6.5-5s-2.9-5-6.5-5H6z"/>
+                        </svg>
+                        DoorDash
                     </a>
 
-                    <a href="#flavors" class="btn btn-outline">View Products</a>
+                    <a href="https://nan-pops-ice-cream-shop-llc.square.site/?owg-fulfillment=pickup&fulfillment=PICKUP&location=11f135313c6815f28c903cecef6dbab4&location_id=LYZRK7PAME6SC&rwg_token=AFd1xnH_M3Gkw2WWq5c5WNFDYI9xzoJuhTVzgjR7vM0CeEDByo49UGEo6RFK0QTAkpSTBHNL5DIfB003nbqDBUKDNurzOYnVIhGyZu1iLL-DHAigAhcO_Hs%3D"
+                       class="btn btn-order btn-order--order"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        Order Ahead
+                    </a>
+
+                    <a href="https://www.order.store/co/store/nan-%26-pops-ice-cream-shop/EaqRjp-5SSuxaymJscZgNQ"
+                       class="btn btn-order btn-order--uber"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                            <path fill="currentColor" d="M4 4h4v10c0 2.2 1.8 4 4 4s4-1.8 4-4V4h4v10c0 4.4-3.6 8-8 8s-8-3.6-8-8V4z"/>
+                        </svg>
+                        Uber Eats
+                    </a>
+
+                    <a href="https://app.squareup.com/gift/MLR3HFWWF4F8K/order"
+                       class="btn btn-order btn-order--gift"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 12 20 22 4 22 4 12"/>
+                            <rect x="2" y="7" width="20" height="5"/>
+                            <line x1="12" y1="22" x2="12" y2="7"/>
+                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                        </svg>
+                        Gift Cards
+                    </a>
                 </div>
 
             </div>
@@ -611,10 +738,7 @@
               </p>
 
             <div class="cta-buttons">
-                <a href="https://www.doordash.com/store/25044905?utm_source=mx_share&aw=ljco-PoPfiklUwhZ" 
-                   class="btn btn-primary btn-lg" 
-                   target="_blank" 
-                   rel="noopener noreferrer">
+                <a href="#home" class="btn btn-primary btn-lg">
                    Order Delivery Now 🛵
                 </a>
 

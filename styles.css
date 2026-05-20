@@ -184,6 +184,7 @@ h1, h2, h3, h4, h5 {
     padding: 1rem 2.25rem;
     font-size: 1.05rem;
     box-shadow: 0 8px 20px rgba(240, 210, 228, 0.4);
+    border: 2px solid transparent;
 }
 
 .btn-primary:hover {
@@ -212,6 +213,33 @@ h1, h2, h3, h4, h5 {
 .btn-outline:hover::after {
     height: 100%;
 }
+
+/* Botones del hero con color de marca */
+.btn-order {
+    padding: 1rem 2.25rem;
+    font-size: 1.05rem;
+    gap: 0.5rem;
+    border: 2px solid transparent;
+    box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.18);
+}
+
+.btn-order svg {
+    flex-shrink: 0;
+}
+
+.btn-order:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+.btn-order--doordash { background: #ffd6d1; color: #e23b3b; border-color: #f3b4ab; }
+.btn-order--order    { background: #cfe7fb; color: #2f7fc0; border-color: #b2d0ef; }
+.btn-order--uber     { background: #d4f1d6; color: #2f9e4f; border-color: #abdfb1; }
+.btn-order--gift     { background: #e7daf9; color: #7a55c0; border-color: #cdbaee; }
+
+.btn-order--doordash:hover { background: #ffc6bf; }
+.btn-order--order:hover    { background: #bbdcf7; }
+.btn-order--uber:hover     { background: #c2eac6; }
+.btn-order--gift:hover     { background: #dbc9f4; }
 
 /* ===========================
         HEADER
@@ -434,7 +462,7 @@ nav a:hover::after {
         background: none;
         box-shadow: none;
         color: var(--dark-pink);
-        font-size: 1.02rem;
+        font-size: 1.2rem;
         font-weight: 500;
         border-radius: 0;
         padding: 0;
@@ -636,6 +664,14 @@ nav a:hover::after {
     color: #555;
     margin: 0 auto 2.25rem;
     max-width: 700px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
 }
 
 /* Imagen Hero */
@@ -2016,11 +2052,6 @@ footer::before {
         display: none;
     }
 
-    /* Oculta botón DoorDash de escritorio */
-    .header-content .btn-doordash {
-        display: none;
-    }
-
     /* Botón de menú móvil (hamburguesa) */
     .mobile-menu-btn { 
         display: block;
@@ -2158,8 +2189,169 @@ footer::before {
 
     /* Tabs */
     .tabs { justify-content: flex-start; }
-    .tab-btn { 
-        font-size: 0.85rem; 
-        padding: 0.5rem 1rem; 
+    .tab-btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
     }
+}
+
+/* ==============================
+   Botones flotantes de pedido
+   ============================== */
+.order-fab {
+    position: fixed;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%) translateX(24px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.85rem;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0.4s;
+}
+
+.order-fab--visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(-50%) translateX(0);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.order-fab__item {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+}
+
+.order-fab__item::after { content: none; }
+
+.order-fab__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.28);
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.order-fab__circle svg {
+    width: 46px;
+    height: 46px;
+}
+
+.order-fab__label {
+    position: absolute;
+    right: calc(100% + 0.6rem);
+    top: 50%;
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--dark-pink);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    padding: 0.75rem 1.55rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px -3px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-50%) translateX(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.order-fab__item:hover .order-fab__label,
+.order-fab__item:focus-visible .order-fab__label {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+}
+
+.order-fab__item:hover .order-fab__circle,
+.order-fab__item:focus-visible .order-fab__circle {
+    transform: scale(1.12);
+    box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.32);
+}
+
+/* Colores pastel por marca */
+.order-fab__item--doordash .order-fab__circle { background: #ffd6d1; color: #e23b3b; }
+.order-fab__item--order    .order-fab__circle { background: #cfe7fb; color: #2f7fc0; }
+.order-fab__item--uber     .order-fab__circle { background: #d4f1d6; color: #2f9e4f; }
+.order-fab__item--gift     .order-fab__circle { background: #e7daf9; color: #7a55c0; }
+
+@media (max-width: 1023px) {
+    .order-fab {
+        display: none;
+    }
+}
+
+/* ==============================
+   Botones de pedido dentro del menú móvil
+   ============================== */
+.nav-order {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .nav-order {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 0.85rem;
+        width: 100%;
+    }
+
+    #main-nav .nav-order__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        padding: 0.95rem 0.5rem;
+        margin: 0;
+        min-height: 92px;
+        border-radius: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        box-shadow: 0 6px 16px -5px rgba(0, 0, 0, 0.28);
+        transform: none;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    #main-nav .nav-order__item::before,
+    #main-nav .nav-order__item:hover::before {
+        content: "";
+        margin: 0;
+    }
+
+    .nav-order__item svg {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .nav-order__label {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        font-size: 0.85rem;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    #main-nav .nav-order__item:hover,
+    #main-nav .nav-order__item:focus-visible,
+    #main-nav .nav-order__item:active {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 22px -5px rgba(0, 0, 0, 0.32);
+    }
+
+    #main-nav .nav-order__item--doordash { background: #ffd6d1; color: #e23b3b; }
+    #main-nav .nav-order__item--order    { background: #cfe7fb; color: #2f7fc0; }
+    #main-nav .nav-order__item--uber     { background: #d4f1d6; color: #2f9e4f; }
+    #main-nav .nav-order__item--gift     { background: #e7daf9; color: #7a55c0; }
 }

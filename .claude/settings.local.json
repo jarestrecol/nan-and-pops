@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e ' *)",
+      "Bash(python -m http.server 8123)",
+      "Bash(curl -s -o /dev/null -w \"index.html: %{http_code}\\\\n\" http://localhost:8123/)",
+      "Bash(curl -s -o /dev/null -w \"styles.min.css: %{http_code}\\\\n\" http://localhost:8123/styles.min.css)",
+      "Bash(curl -s http://localhost:8123/)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $src = [System.Drawing.Bitmap]::FromFile\\(\"$env:TEMP\\\\nap-shot-mobile.png\"\\); \"Mobile image size: $\\($src.Width\\) x $\\($src.Height\\)\"; $cropW = 140; $crop = New-Object System.Drawing.Bitmap\\($cropW, $src.Height\\); $g = [System.Drawing.Graphics]::FromImage\\($crop\\); $g.DrawImage\\($src, \\(New-Object System.Drawing.Rectangle\\(0,0,$cropW,$src.Height\\)\\), \\(New-Object System.Drawing.Rectangle\\($src.Width-$cropW,0,$cropW,$src.Height\\)\\), [System.Drawing.GraphicsUnit]::Pixel\\); $crop.Save\\(\"$env:TEMP\\\\nap-mobile-rightedge.png\"\\); $g.Dispose\\(\\); $crop.Dispose\\(\\); $src.Dispose\\(\\); \"Saved right-edge crop\")",
+      "PowerShell(Add-Type -AssemblyName System.Drawing; $src = [System.Drawing.Bitmap]::FromFile\\(\"$env:TEMP\\\\nap-shot-mobile.png\"\\); $cropW = 150; $sx = [int]$src.Width - [int]$cropW; $h = [int]$src.Height; $crop = New-Object System.Drawing.Bitmap\\($cropW, $h\\); $g = [System.Drawing.Graphics]::FromImage\\($crop\\); $destRect = New-Object System.Drawing.Rectangle 0,0,$cropW,$h; $srcRect = New-Object System.Drawing.Rectangle $sx,0,$cropW,$h; $g.DrawImage\\($src, $destRect, $srcRect, [System.Drawing.GraphicsUnit]::Pixel\\); $crop.Save\\(\"$env:TEMP\\\\nap-mobile-rightedge.png\"\\); $g.Dispose\\(\\); $crop.Dispose\\(\\); $src.Dispose\\(\\); \"Saved crop: $cropW x $h from x=$sx\")",
+      "PowerShell(Out-Null *)",
+      "Bash(rm -f _dbg.html)",
+      "Bash(ls _dbg.html)",
+      "Bash(taskkill //F //IM python.exe)",
+      "Bash(rm -f _dbg2.html)",
+      "Bash(ls \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\")",
+      "Bash(ls \"C:\\\\Program Files \\(x86\\)\\\\Microsoft\\\\Edge\\\\Application\\\\msedge.exe\")",
+      "Bash(node --version)",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-shot.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-shot2.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-shot3.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-shot4.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-test.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-test2.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-shot5.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-shot6.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-test3.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-shot7.js\")",
+      "Bash(node \"C:\\\\Users\\\\Ing. Julian Restrepo\\\\AppData\\\\Local\\\\Temp\\\\np-test4.js\")"
+    ]
+  }
+}
