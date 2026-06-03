@@ -93,15 +93,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ========== BOTONES FLOTANTES DE PEDIDO ========== */
-    const orderFab = document.querySelector('.order-fab');
-    const brownieTrigger = document.querySelector('#brownie-trigger');
-    const siteFooter = document.querySelector('footer');
-    if (orderFab && brownieTrigger) {
+    const orderFab    = document.querySelector('.order-fab');
+    const fabStart    = document.querySelector('#fab-start');
+    const fabEnd      = document.querySelector('#testimonials');
+    if (orderFab && fabStart) {
         const toggleOrderFab = () => {
-            // Aparecen cuando el Brownie Sundae entra en pantalla
-            const reached = brownieTrigger.getBoundingClientRect().top < window.innerHeight;
-            const inFooter = siteFooter && siteFooter.getBoundingClientRect().top < window.innerHeight;
-            orderFab.classList.toggle('order-fab--visible', reached && !inFooter);
+            const started = fabStart.getBoundingClientRect().top < window.innerHeight;
+            const ended   = fabEnd && fabEnd.getBoundingClientRect().top < window.innerHeight;
+            orderFab.classList.toggle('order-fab--visible', started && !ended);
         };
         window.addEventListener('scroll', toggleOrderFab, { passive: true });
         window.addEventListener('resize', toggleOrderFab);
