@@ -93,14 +93,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     /* ========== BOTONES FLOTANTES DE PEDIDO ========== */
-    const orderFab    = document.querySelector('.order-fab');
-    const fabStart    = document.querySelector('#fab-start');
-    const fabEnd      = document.querySelector('#testimonials');
-    if (orderFab && fabStart) {
+    const orderFab = document.querySelector('.order-fab');
+    if (orderFab) {
+        const brownieCard  = document.querySelector('img[alt="Brownie Sundae"]')?.closest('.flavor-card');
+        const testimonials = document.querySelector('#testimonials');
+
+        // Posición absoluta calculada al cargar (todas las tarjetas visibles, scrollY=0)
+        const fabStartY = brownieCard
+            ? brownieCard.getBoundingClientRect().top + window.scrollY
+            : Infinity;
+        const fabEndY = testimonials
+            ? testimonials.getBoundingClientRect().top + window.scrollY
+            : Infinity;
+
         const toggleOrderFab = () => {
-            const started = fabStart.getBoundingClientRect().top < window.innerHeight;
-            const ended   = fabEnd && fabEnd.getBoundingClientRect().top < window.innerHeight;
-            orderFab.classList.toggle('order-fab--visible', started && !ended);
+            const scrollBottom = window.scrollY + window.innerHeight;
+            const show = scrollBottom > fabStartY && window.scrollY < fabEndY;
+            orderFab.classList.toggle('order-fab--visible', show);
         };
         window.addEventListener('scroll', toggleOrderFab, { passive: true });
         window.addEventListener('resize', toggleOrderFab);
