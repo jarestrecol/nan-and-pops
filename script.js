@@ -94,14 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ========== BOTONES FLOTANTES DE PEDIDO ========== */
     const orderFab = document.querySelector('.order-fab');
-    const flavorTabs = document.querySelector('#flavors .tabs');
+    const flavorSection = document.querySelector('#flavors');
     const siteFooter = document.querySelector('footer');
-    if (orderFab && flavorTabs) {
+    if (orderFab && flavorSection) {
         const toggleOrderFab = () => {
-            const reachedTabs = flavorTabs.getBoundingClientRect().top < window.innerHeight;
-            // Ocultar los botones flotantes cuando el footer entra en pantalla
+            const rect = flavorSection.getBoundingClientRect();
+            // Mostrar solo cuando #flavors ha subido al menos a la mitad de la pantalla
+            const inFlavors = rect.top < window.innerHeight / 2;
             const inFooter = siteFooter && siteFooter.getBoundingClientRect().top < window.innerHeight;
-            orderFab.classList.toggle('order-fab--visible', reachedTabs && !inFooter);
+            orderFab.classList.toggle('order-fab--visible', inFlavors && !inFooter);
         };
         window.addEventListener('scroll', toggleOrderFab, { passive: true });
         window.addEventListener('resize', toggleOrderFab);
