@@ -7,11 +7,24 @@
     <title>Nan & Pops Ice Cream</title>
     <link rel="icon" type="image/x-icon" href="img/helado.ico">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts — non-blocking -->
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+          href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700&display=swap">
+    </noscript>
+
+    <!-- Font Awesome — non-blocking (solo se usa en el footer) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </noscript>
 
     <!-- Styles -->
     <link rel="stylesheet" href="styles.min.css">
@@ -36,7 +49,7 @@
     <div class="header-content">
       <a href="#home" class="logo">
         <div class="logo-icon">
-          <img src="img/logo.webp" alt="Nan & Pop’s Ice Cream Logo" loading="lazy">
+          <img src="img/logo.webp" alt="Nan & Pop’s Ice Cream Logo" loading="eager" fetchpriority="high">
         </div>
       </a>
 
@@ -234,12 +247,11 @@
 
 <section class="video-gallery">
     <div class="video-item">
-        <video 
-          muted 
-          autoplay 
-          loop 
-          playsinline 
-          preload="metadata" 
+        <video
+          muted
+          loop
+          playsinline
+          preload="none"
           aria-label="Video de presentación 1"
         >
             <source src="video/video1.mp4" type="video/mp4">
@@ -248,12 +260,11 @@
     </div>
 
     <div class="video-item">
-        <video 
-          muted 
-          autoplay 
-          loop 
-          playsinline 
-          preload="metadata" 
+        <video
+          muted
+          loop
+          playsinline
+          preload="none"
           aria-label="Video de presentación 2"
         >
             <source src="video/video2.mp4" type="video/mp4">
@@ -262,12 +273,11 @@
     </div>
 
     <div class="video-item">
-        <video 
-          muted 
-          autoplay 
-          loop 
-          playsinline 
-          preload="metadata" 
+        <video
+          muted
+          loop
+          playsinline
+          preload="none"
           aria-label="Video de presentación 3"
         >
             <source src="video/video3.mp4" type="video/mp4">
@@ -276,12 +286,11 @@
     </div>
 
     <div class="video-item">
-        <video 
-          muted 
-          autoplay 
-          loop 
-          playsinline 
-          preload="metadata" 
+        <video
+          muted
+          loop
+          playsinline
+          preload="none"
           aria-label="Video de presentación 4"
         >
             <source src="video/video4.mp4" type="video/mp4">
@@ -1024,7 +1033,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- ********** PIE DE PÁGINA (FOOTER) ********** -->
  

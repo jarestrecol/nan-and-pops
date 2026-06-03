@@ -108,6 +108,22 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleOrderFab();
     }
 
+    /* ========== VIDEO LAZY PLAY ========== */
+    const lazyVideos = document.querySelectorAll('video[preload="none"]');
+    if (lazyVideos.length > 0) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play().catch(() => {});
+                } else {
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.1 });
+        lazyVideos.forEach(v => videoObserver.observe(v));
+    }
+
     /* ========== CARRUSEL CONTINUO ========== */
     function createMarqueeCarousel(trackSelector, speed = 0.4) {
         const track = document.querySelector(trackSelector);
