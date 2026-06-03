@@ -2230,7 +2230,16 @@ footer::before {
 
 .order-fab__item::after { content: none; }
 
+.order-fab__cream {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.3, 1);
+}
+
 .order-fab__circle {
+    position: relative;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2240,8 +2249,9 @@ footer::before {
     flex-shrink: 0;
     border: 2px solid rgba(255, 255, 255, 0.9);
     box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.28);
-    transition: transform 0.3s cubic-bezier(0.4, 2, 0.3, 1), box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
+
 
 .order-fab__circle svg {
     width: 46px;
@@ -2251,7 +2261,7 @@ footer::before {
 .order-fab__label {
     position: absolute;
     right: calc(100% + 0.6rem);
-    top: 50%;
+    top: 48px;
     background: rgba(255, 255, 255, 0.96);
     color: var(--dark-pink);
     font-family: 'Raleway', sans-serif;
@@ -2273,9 +2283,13 @@ footer::before {
     transform: translateY(-50%) translateX(0);
 }
 
+.order-fab__item:hover .order-fab__cream,
+.order-fab__item:focus-visible .order-fab__cream {
+    transform: scale(1.1);
+}
+
 .order-fab__item:hover .order-fab__circle,
 .order-fab__item:focus-visible .order-fab__circle {
-    transform: scale(1.12);
     box-shadow: 0 10px 24px -4px rgba(0, 0, 0, 0.32);
 }
 
